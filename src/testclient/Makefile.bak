@@ -1,0 +1,11 @@
+
+all: server client
+
+server:server.cpp
+	g++ -Wall -g server.cpp -o server -lpthread
+
+client:client.cpp
+	g++ -Wall -g client.cpp -o client -lpthread
+
+clean:
+	rm -rf client server

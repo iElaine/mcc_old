@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <cstring>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int sock = socket(AF_INET, SOCK_STREAM, 0);
+	if(sock < 0)
+	{
+		perror("socket");
+		exit(0);
+	}
+	struct sockaddr_in server_addr;
+	memset(&server_addr, 0, sizeof(server_addr));
+	server_addr.sin_family = AF_INET;
+	server_addr.sin_port = 10000;
+	server_addr.sin_addr.s_addr = inet_addr("192.168.1.252");
+	if(connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0)
+	{
+		perror("connect");
+		exit(0);
+	}
+	while(1)
+	{
+		char ibuf[1024];
+		char obuf[1024];
+		int len;
+		cout<<"input message:";
+		cin>>obuf;
+		len = send(sock, obuf, 10, 0);
+		if(len < 0)
+		{
+			perror("send");
+			exit(0);
+		}
+		len = recv(sock, ibuf, 10, 0);
+		if(len < 0)
+		{
+			perror("recv");
+			exit(0);
+		}
+	}
+	close(sock);
+	return 0;
+}

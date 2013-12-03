@@ -1,0 +1,49 @@
+2013/11/27 08:20:20.754 register keyboard virtual[0x80a67f0]
+2013/11/27 08:20:20.755 register keyboard generic[0x80a91c0]
+2013/11/27 08:20:20.755 register keyboard rc[0x80a6540]
+2013/11/27 08:20:20.755 register keyboard cz08[0x80a6588]
+2013/11/27 08:20:20.755 register keyboard jxj_en[0x80a9888]
+2013/11/27 08:20:20.755 register keyboard jxj[0x80a98f8]
+2013/11/27 08:20:20.755 parse file mcc.ini
+2013/11/27 08:20:20.756 Create Resource Manager 0x80a9b60
+2013/11/27 08:20:20.756 cam config:1:2:3:4:5:6:7:8:9:10
+2013/11/27 08:20:20.756 add Camera 1
+2013/11/27 08:20:20.756 add Camera 2
+2013/11/27 08:20:20.756 add Camera 3
+2013/11/27 08:20:20.756 add Camera 4
+2013/11/27 08:20:20.756 add Camera 5
+2013/11/27 08:20:20.756 add Camera 6
+2013/11/27 08:20:20.756 add Camera 7
+2013/11/27 08:20:20.756 add Camera 8
+2013/11/27 08:20:20.756 add Camera 9
+2013/11/27 08:20:20.756 add Camera 10
+2013/11/27 08:20:20.756 mon config:1:2:3:4:5:6:7:8:9:10:11:12:13:14:15:16:17:18
+2013/11/27 08:20:20.756 add Monitor 1
+2013/11/27 08:20:20.756 add Monitor 2
+2013/11/27 08:20:20.756 add Monitor 3
+2013/11/27 08:20:20.756 add Monitor 4
+2013/11/27 08:20:20.756 add Monitor 5
+2013/11/27 08:20:20.756 add Monitor 6
+2013/11/27 08:20:20.756 add Monitor 7
+2013/11/27 08:20:20.756 add Monitor 8
+2013/11/27 08:20:20.756 add Monitor 9
+2013/11/27 08:20:20.756 add Monitor 10
+2013/11/27 08:20:20.756 add Monitor 11
+2013/11/27 08:20:20.757 add Monitor 12
+2013/11/27 08:20:20.757 add Monitor 13
+2013/11/27 08:20:20.757 add Monitor 14
+2013/11/27 08:20:20.757 add Monitor 15
+2013/11/27 08:20:20.757 add Monitor 16
+2013/11/27 08:20:20.757 add Monitor 17
+2013/11/27 08:20:20.757 add Monitor 18
+2013/11/27 08:20:20.757 trunk config:2-9:3-10:6-11
+2013/11/27 08:20:20.757 add trunk 2-9
+2013/11/27 08:20:20.757 add trunk 3-10
+2013/11/27 08:20:20.757 add trunk 6-11
+2013/11/27 08:20:20.757 Agent Server started!
+2013/11/27 08:20:20.757 Create Keyboard Manager 0x80ab998
+2013/11/27 08:20:20.758 get keyboard factory 0x80a9888
+2013/11/27 08:20:20.758 Setup9600,8,1,n
+2013/11/27 08:20:20.758 SerialPort:/dev/ttyS0: set listener 0x80abe68
+2013/11/27 08:20:20.758 SerialPort:/dev/ttyUSB1: open failed
+2013/11/27 08:20:20.758 load keyboard jxj_en failed! : failed to load keyboard

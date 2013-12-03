@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <cstring>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main()
+{
+	int mListenFd = 0;
+	cout<<"init network!"<<endl;
+	mListenFd = socket(AF_INET, SOCK_STREAM, 0);
+	if(mListenFd < 0)
+	{
+		perror("socket");
+		exit(0);
+	}
+	cout<<"socket ok >> ";
+	struct sockaddr_in server_addr;
+	server_addr.sin_family = AF_INET;
+	server_addr.sin_port = htons(10000);
+	server_addr.sin_addr.s_addr = INADDR_ANY;
+	if(bind(mListenFd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0)
+	{
+		perror("bind");
+		exit(0);
+	}
+	cout<<"bind ok >> ";
+	if(listen(mListenFd, 5) < 0)
+	{
+		perror("listen");
+		exit(0);
+	}
+	cout<<"listen ok >> ";
+	int connfd = accept(mListenFd, NULL, NULL);
+	if(connfd < 0)
+	{
+		perror("accept");
+		exit(0);
+	}
+	cout<<"accept ok!"<<endl;
+	while(1)
+	{
+		char ibuf[1024];
+		char obuf[1024];
+		recv(connfd, ibuf, 10, 0);
+		ibuf[10] = 0;
+		cout<<ibuf<<endl;
+		send(connfd, obuf, 10, 0);
+		if(ibuf[0] == 'q' &&
+				ibuf[1] == 'i' &&
+				ibuf[2] == 'u' &&
+				ibuf[3] == 't') 
+			break;
+	}
+	close(connfd);
+	return 0;
+};

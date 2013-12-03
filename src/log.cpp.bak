@@ -1,0 +1,22 @@
+/**
+ * @file log.cpp
+ * @author TommyWang Email<xuchu1986@gmail.com>
+ * @brief 
+ */
+#include "log.h"
+
+/**
+ * @brief constructor
+ */
+Log::Log()
+{
+
+}
+
+/**
+ * @brief destructor
+ */
+Log::~Log()
+{
+
+}
